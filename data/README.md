@@ -1,10 +1,12 @@
 # The `\data` Directory: Project Data Summary 
-
+//test//
 In our project, we use the following data files and Application Programming Interfaces:
 
 ## Data files (TODO: Update/delete for your PROJECT)
 |Data File Name | Brief Description|
-|---------------| -----------------|
+|TV shows.csv| A csv file containing 2k data points of the top rated shows and what platforms they are on|
+|Movies_on_Streaming_platforms.csv| CSV file containing 2K observations of top 
+rated movies and what platforms they are on.|
 |[example.cvs](./example.csv) | This file contains temperature data. (See report for details.)
 |[another-file](./filename2.csv) | Description ... 
 
