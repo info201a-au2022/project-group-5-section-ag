@@ -20,21 +20,85 @@ View(tv_shows)
 # Returning five different metrics from tv shows
 library(dplyr)
 
+#Simple Summary State for shows
+
+summary_info <- list()
+summary_info$num_observations <- nrow(tv_shows)
+
+#Number of shows per service
 number_of_shows_Netflix <- tv_shows %>%  
+  filter(Netflix == 1) %>% 
   count(Netflix)
-print(number_of_shows_per_service)
 
 number_of_shows_Hulu <- tv_shows %>%  
+  filter(Hulu == 1) %>% 
   count(Hulu)
 
 number_of_shows_Disney <- tv_shows %>%  
+  filter(Disney. == 1) %>% 
   count(Disney.)
 
 number_of_shows_Amazon <- tv_shows %>%  
+  filter(Prime.Video == 1) %>% 
   count(Prime.Video)
 
-count_combo <- list(number_of_shows_Netflix, number_of_shows_Amazon,
-                         number_of_shows_Disney, number_of_shows_Hulu)
+shows_per_service <- data.frame(name_of_streaming_service = c("Netflix","Hulu","Amazon","Disney"),
+                                number_of_shows = c(1971,1621,1831,351))
 
-View(count_combo)
+
+
+#Table Scrpit for Summary Information
+
+
+
+family_friendly <- tv_shows %>% 
+  mutate(across('Age',str_replace,'\\+',"")) %>% 
+  group_by(Year , Age) %>% 
+  summarise(avg_age_rating = mean(as.numeric(Age)),
+            avg_year = mean(Year))
+
+View(family_friendly)
+
+
+
+
+
+
+
+
+
+
+
+View(shows_per_service)
+
+#Average Rating Per Service IMDB
+
+
+#Average Rating Per Service Rotten 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
