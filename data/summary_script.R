@@ -50,14 +50,12 @@ shows_per_service <- data.frame(name_of_streaming_service = c("Netflix","Hulu","
 #Table Scrpit for Summary Information
 
 
-
 family_friendly <- tv_shows %>% 
   mutate(across('Age',str_replace,'\\+',"")) %>% 
   group_by(Year , Age) %>% 
   summarise(avg_age_rating = mean(as.numeric(Age)),
             avg_year = mean(Year))
 
-View(family_friendly)
 
 
 
