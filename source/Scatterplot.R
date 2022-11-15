@@ -1,3 +1,35 @@
 #Scatterplot comparing different IMDb ratings across streaming services
 
 all_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
+
+netflix_IMDb <- all_data %>% 
+  filter(Platform == "Netflix") %>% 
+  summarise(mean = mean(IMDb_new, na.rm = TRUE))
+
+Disney_IMDb <- all_data %>% 
+  filter(Platform == "Disney.") %>% 
+  summarise(mean = mean(IMDb_new, na.rm = TRUE))
+
+Prime.Video_IMDB <- all_data %>% 
+  filter(Platform == "Prime.Video") %>% 
+  summarise(mean = mean(IMDb_new, na.rm = TRUE))
+
+Hulu_IMDb <- all_data %>% 
+  filter(Platform == "Hulu") %>% 
+  summarise(mean = mean(IMDb_new, na.rm = TRUE))
+
+Average_per_platform2 <- data.frame(
+  Platform=c("Netflix", "Disney.", "Prime.Video", "Hulu") , 
+  IMDb_Score=c(netflix_IMDb$mean, Disney_IMDb$mean, Prime.Video_IMDB$mean, Hulu_IMDb$mean)
+)
+
+
+ggplot(Average_per_platform2, aes(x=Platform, y=IMDb_Score))+
+  geom_point(stat = "identity")+
+  ggtitle("IMDb Score By Service")
+
+
+#This graph shows us the average IMBd score across every show offered by the 4 main streaming platforms. We choose to do this because
+#there are so many different platforms out there and we wanted to find a way to depict which one is the best. As you can see from this graph, 
+#IMDb thinks that on average, Prime.Video has the highest quality shows on its platform. We choose to do a scatterplot because it makes it easy 
+#to compare the differences between platforms.
