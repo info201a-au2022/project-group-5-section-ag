@@ -22,9 +22,9 @@ We are going to take existing data on the various streaming services on the mark
 Possible harms: There is not really any harm that could come out of this data. The only possible harm would be certain companies losing business but that would be because of their own doing and at the greater benefit of society.
 - **Benefits**: as stated a couple times, the main benefits of this are just showing various aspects of different services and allowing people to easily compare them in order to decide which one is best for them.
 URLs:
--  https://www.usnews.com/360-reviews/technology/streaming-services/best-live-streaming-tv
-- https://journals.sagepub.com/doi/full/10.1177/0163443720904587
-- http://umu.diva-portal.org/smash/get/diva2:1572611/FULLTEXT01.pdf
+-  "Best Live TV Streaming Services of 2022" | U.S. News.https://www.usnews.com/360-reviews/technology/streaming-services/best-live-tv-streaming-services.
+- “Sage Journals.” SAGE Publications Inc, 27 Oct. 2022, https://us.sagepub.com/en-us/nam/sage-journals.
+- The Perspectives of Professionals on Providing Services ... - Diva Portal. https://umu.diva-portal.org/smash/get/diva2:1547068/FULLTEXT01.pdf. 
 ## Research Questions
   * What streming service has the best overall value?
     -  Overall value means the most content for the best price and the type of content. Ex: Does the platform provide new movies, what genres, etc.
@@ -55,7 +55,7 @@ The dataset we choose is a breakdown of all movies and TV shows on four of the t
 
     
 |Data File Name | Brief Description|
-|TV shows.csv| A csv file containing over 5k observations with eleven variables| 
+|TV shows.csv| A csv file containing over 5k observations with eleven variables|
 |Movies_on_Streaming_platforms.csv| CSV file containing over 9K observations with eleven variables|
 | URL| https://www.kaggle.com/datasets/ruchi798/tv-shows-on-netflix-prime-video-hulu-and-disney|
 |Citation| | Bhatia, Ruchi. “TV Shows on Netflix, Prime Video, Hulu and Disney+.” Kaggle, 2 Aug. 2021, https://www.kaggle.com/datasets/ruchi798/tv-shows-on-netflix-prime-video-hulu-and-disney. |
@@ -63,7 +63,7 @@ The dataset we choose is a breakdown of all movies and TV shows on four of the t
 |citation|| Bhatia, Ruchi. “Movies on Netflix, Prime Video, Hulu and Disney+.” Kaggle, 16 Dec. 2021, https://www.kaggle.com/datasets/ruchi798/movies-on-netflix-prime-video-hulu-and-disney.|
 [example.cvs](./example.csv) | This file contains temperature data. (See report for details.)|
 |
-|[another-file](./filename2.csv) | Description ... 
+|[another-file](./filename2.csv) | Description ...
 ## Expected Implications
   There is a certain level of implications we expect as researchers throughout this problem. We must note that this project isnt solving an explicit issue, it's for the benefit of the consumer of different streaming services. The largest implication this could create is that of the streaming service provider. This project will highlight some metrics that will force designers and technologists to take a second look at their respective service.   
 ## Limitations
