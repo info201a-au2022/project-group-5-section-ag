@@ -34,7 +34,26 @@ URLs:
     - Which servcies are available on more than just desktop and TV? What is there interface like and is their platform cross compatible with other technologies?
 
 ## The Dataset
-The dataset we choose is a breakdown of all movies and TV shows on four of the top entertainment streaming platforms (Hulu, Netflix, Disney +, and Prime Video). The movies have been ranked based on user reviews and critic reviews, allowing us to rank each platform's selection of movies and tv shows from multiple different standpoints (average movie/Tv show rating, average rating per platform, average tv show rating per platform, etc. Both the movie dataset and the tv dataset were created by the same person (name in citations). The dataset can be very useful and can be used to answer many different questions, most consumers who many choices have so these days on where to spend their money when it comes to entertainment and television. The source is credited and the rating for some has been verified to check for accuracy against what is shown.
+The dataset we choose is a breakdown of all movies and TV shows on four of the top entertainment streaming platforms (Hulu, Netflix, Disney +, and Prime Video). The movies have been ranked based on user reviews and critic reviews, allowing us to rank each platform's selection of movies and tv shows from multiple different standpoints (average movie/Tv show rating, average rating per platform, average tv show rating per platform, etc. Both the movie dataset and the tv dataset were created by the same person (name in citations). The dataset can be very useful and can be used to answer many different questions, most consumers who many choices have so these days on where to spend their money when it comes to entertainment and television. The source is credited and the rating for some has been verified to check for accuracy against what is shown. Below is a table with the amount of rows and columns for our datasets
+
+ ## all_data.csv
+| rows   | columns |
+| ------ | ------  |
+| 5774   |    11   |
+
+ ## all_data.csv
+| rows   | columns |
+| ------ | ------  |
+| 9515   |    11   |
+
+ ## all_data.csv
+| rows   | columns |
+| ------ | ------  |
+| 5774   |    11   |
+
+
+
+    
 |Data File Name | Brief Description|
 |TV shows.csv| A csv file containing over 5k observations with eleven variables| 
 |Movies_on_Streaming_platforms.csv| CSV file containing over 9K observations with eleven variables|
