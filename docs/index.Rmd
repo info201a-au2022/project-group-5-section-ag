@@ -4,9 +4,22 @@ author: "John, Dominick, Keyvyn"
 date: "11/14/2022"
 output: html_document
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+#install.packages("kableExtra")
+library(kableExtra)
+library(dplyr)
+
+```
+```
+tv_data_long<- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
+ tv_data_long%>% group_by(Platform) %>% summarise(avg_RT = mean(Rotten_Tomatoes_new), avg_IMDB = mean(IMDb_new, na.rm = TRUE))
+dt<-tv_data_long
+dt %>%
+  kbl(caption = "Tv shows based on Streaming Service") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+
+
 ```
 
 ## What is this file for?
@@ -39,8 +52,8 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+```{r }
+summary(summary_script.R)
 ```
 
 ## Including Plots
