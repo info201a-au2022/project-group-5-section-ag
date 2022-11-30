@@ -49,7 +49,8 @@ shows_per_service <- data.frame(name_of_streaming_service = c("Netflix","Hulu","
 
 #Table Scrpit for Summary Information
 # Table summerizing the data frame of tv shows. 
-tv_data_long%>% group_by(Platform) %>% summarise(avg_Rotten_Tomato = mean(Rotten_Tomatoes_new), 
+tv_data_long%>% group_by(Platform) %>% 
+  summarise(avg_Rotten_Tomato = mean(Rotten_Tomatoes_new), 
                                                  avg_IMDB = mean(IMDb_new, na.rm = TRUE), 
                                                  Highest_Rated_IMDb = max(IMDb_new,na.rm = TRUE),
                                                  Highest_Rated_RT = max(Rotten_Tomatoes_new,na.rm = TRUE),
