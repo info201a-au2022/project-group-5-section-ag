@@ -39,4 +39,4 @@ num_of_shows <- ggplot(Count_per_platform, aes(x="", y=Number_Of_Shows, fill=Pla
 #Through this chart you can see that Netflix has by far the most, the next two are close, and Disney has by far the least. With more time/ skill I am going
 #to figure out how to get the actual number to be displayed on each section. 
   
->>>>>>> fab0b16e8c4624164bdb860120025dfdadc71623
+

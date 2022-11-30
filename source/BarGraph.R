@@ -31,9 +31,9 @@ Average_per_platform <- data.frame(
 ?ggtitle
 
 
-bar_graph_perf <- ggplot(Average_per_platform, aes(x=Platform, y=Rotten_Tomato_Score)) +
+bar_graph_perf <- (ggplot(Average_per_platform, aes(x=Platform, y=Rotten_Tomato_Score)) +
   geom_bar(stat = "identity") +
-  ggtitle("Rotten Tomato Score By Service")
+  ggtitle("Rotten Tomato Score By Service"))
 
 
 #This is a simple bar graph that shows the average rotten tomato score across every show offered through the four main streaming platforms.
