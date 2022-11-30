@@ -1,25 +1,25 @@
 
 #Bar Graph comparing the average rotten tomato score across streaming services
 
-all_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
+bar_all_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
 
 library(ggplot2)
 
 ?summarise
 
-netflix_rotten_tomato <- all_data %>% 
+netflix_rotten_tomato <- bar_all_data %>% 
   filter(Platform == "Netflix") %>% 
   summarise(mean = mean(Rotten_Tomatoes_new))
 
-Disney_rotten_tomato <- all_data %>% 
+Disney_rotten_tomato <- bar_all_data %>% 
   filter(Platform == "Disney.") %>% 
   summarise(mean = mean(Rotten_Tomatoes_new))
 
-Prime.Video_rotten_tomato <- all_data %>% 
+Prime.Video_rotten_tomato <- bar_all_data %>% 
   filter(Platform == "Prime.Video") %>% 
   summarise(mean = mean(Rotten_Tomatoes_new))
 
-Hulu_rotten_tomato <- all_data %>% 
+Hulu_rotten_tomato <- bar_all_data %>% 
   filter(Platform == "Hulu") %>% 
   summarise(mean = mean(Rotten_Tomatoes_new))
 
@@ -31,8 +31,8 @@ Average_per_platform <- data.frame(
 ?ggtitle
 
 
-ggplot(Average_per_platform, aes(x=Platform, y=Rotten_Tomato_Score))+
-  geom_bar(stat = "identity")+
+bar_graph_perf <- ggplot(Average_per_platform, aes(x=Platform, y=Rotten_Tomato_Score)) +
+  geom_bar(stat = "identity") +
   ggtitle("Rotten Tomato Score By Service")
 
 

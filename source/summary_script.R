@@ -10,6 +10,7 @@ movies_streaming <- read.csv(
 "https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/MoviesOnStreamingPlatforms.csv") 
 
 #Dataset 2
+<<<<<<< HEAD:data/summary_script.R
 tv_shows <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
  #install.packages("devtools")
 devtools::install_github("R-CoderDotCom/cyberpunk")
@@ -18,15 +19,12 @@ View(tv_data_long)
 library(dplyr)
 library(ggplot2)
 #Creating list about Tv show data set that reveals information (summarize)
+=======
+tv_data_long <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
 
-# Returning five different metrics from tv shows
-summary_info <- list(tv_data_long)
-summarise(tv_data_long)
-view (summary_info)
-#Simple Summary State for shows
+file <- ("info201/assignments/project-group-5-section-ag/data/MoviesOnStreamingPlatforms.csv")
+>>>>>>> daca66c2164ce7a004d53a9e866e5f39a96d3afc:source/summary_script.R
 
-Summary<- tv_data_long%>% group_by(Platform) %>% summarise(avg_RT = mean(Rotten_Tomatoes_new), avg_IMDB = mean(IMDb_new, na.rm = TRUE))
-view(Summary)
 
 #Number of shows per service
 number_of_shows_Netflix <- tv_data_long %>%  
@@ -52,13 +50,17 @@ shows_per_service <- data.frame(name_of_streaming_service = c("Netflix","Hulu","
 
 #Table Scrpit for Summary Information
 # Table summerizing the data frame of tv shows. 
-tv_data_long%>% group_by(Platform) %>% summarise(avg_Rotten_Tomato = mean(Rotten_Tomatoes_new), 
+
+summary_table <- tv_data_long%>% 
+  group_by(Platform) %>% 
+  summarise(avg_Rotten_Tomato = mean(Rotten_Tomatoes_new), 
                                                  avg_IMDB = mean(IMDb_new, na.rm = TRUE), 
                                                  Highest_Rated_IMDb = max(IMDb_new,na.rm = TRUE),
                                                  Highest_Rated_RT = max(Rotten_Tomatoes_new,na.rm = TRUE),
                                                  Lowest_Rated_IMDb = min(IMDb_new,na.rm = TRUE),
                                                  Highest_Rated_RT = min(Rotten_Tomatoes_new, na.rm = TRUE),
                                                  Standard_Deviation_IMDb = sd(IMDb_new,na.rm = TRUE))
+<<<<<<< HEAD:data/summary_script.R
 
 #########################################
 #########################################
@@ -211,5 +213,12 @@ View(shows_per_service)
 
 
 
+=======
+>>>>>>> daca66c2164ce7a004d53a9e866e5f39a96d3afc:source/summary_script.R
 
+# family_friendly <- tv_shows %>% 
+#   mutate(across('Age',str_replace,'\\+',"")) %>% 
+#   group_by(Year , Age) %>% 
+#   summarise(avg_age_rating = mean(as.numeric(Age)),
+#             avg_year = mean(Year))
 

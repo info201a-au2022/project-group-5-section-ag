@@ -1,29 +1,25 @@
 
 #Pie Chart of number of shows per streaming service
 
-<<<<<<< HEAD
-all_data <- read.csv(
-"https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
-View(all_data)
-=======
-all_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
+
+pie_all_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
 
 
 ?count
 
-netflix_count <- all_data %>% 
+netflix_count <- pie_all_data %>% 
   filter(Platform == "Netflix") %>%
   summarise(count = n())
 
-Hulu_count <- all_data %>% 
+Hulu_count <- pie_all_data %>% 
   filter(Platform == "Hulu") %>%
   summarise(count = n())
 
-Disney._count <- all_data %>% 
+Disney._count <- pie_all_data %>% 
   filter(Platform == "Disney.") %>%
   summarise(count = n())
 
-Prime.Video_count <- all_data %>% 
+Prime.Video_count <- pie_all_data %>% 
   filter(Platform == "Prime.Video") %>%
   summarise(count = n())
 
@@ -32,7 +28,7 @@ Count_per_platform <- data.frame(
   Number_Of_Shows=c(netflix_count$count, Disney._count$count, Prime.Video_count$count, Hulu_count$count)
 )
 
-ggplot(Count_per_platform, aes(x="", y=Number_Of_Shows, fill=Platform))+
+num_of_shows <- ggplot(Count_per_platform, aes(x="", y=Number_Of_Shows, fill=Platform))+
   geom_bar(stat = "identity")+
   coord_polar("y", start=0)+
   ggtitle("Number Of Shows Per Platform")

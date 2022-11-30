@@ -1,20 +1,20 @@
 #Scatterplot comparing different IMDb ratings across streaming services
 
-all_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
+scatter_all_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
 
-netflix_IMDb <- all_data %>% 
+netflix_IMDb <- scatter_all_data %>% 
   filter(Platform == "Netflix") %>% 
   summarise(mean = mean(IMDb_new, na.rm = TRUE))
 
-Disney_IMDb <- all_data %>% 
+Disney_IMDb <- scatter_all_data %>% 
   filter(Platform == "Disney.") %>% 
   summarise(mean = mean(IMDb_new, na.rm = TRUE))
 
-Prime.Video_IMDB <- all_data %>% 
+Prime.Video_IMDB <- scatter_all_data %>% 
   filter(Platform == "Prime.Video") %>% 
   summarise(mean = mean(IMDb_new, na.rm = TRUE))
 
-Hulu_IMDb <- all_data %>% 
+Hulu_IMDb <- scatter_all_data %>% 
   filter(Platform == "Hulu") %>% 
   summarise(mean = mean(IMDb_new, na.rm = TRUE))
 
@@ -24,7 +24,7 @@ Average_per_platform2 <- data.frame(
 )
 
 
-ggplot(Average_per_platform2, aes(x=Platform, y=IMDb_Score))+
+scatter_for_imdb <- ggplot(Average_per_platform2, aes(x=Platform, y=IMDb_Score))+
   geom_point(stat = "identity")+
   ggtitle("IMDb Score By Service")
 
