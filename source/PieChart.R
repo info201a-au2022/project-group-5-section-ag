@@ -1,6 +1,11 @@
 
 #Pie Chart of number of shows per streaming service
 
+<<<<<<< HEAD
+all_data <- read.csv(
+"https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
+View(all_data)
+=======
 all_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
 
 
@@ -38,3 +43,4 @@ ggplot(Count_per_platform, aes(x="", y=Number_Of_Shows, fill=Platform))+
 #Through this chart you can see that Netflix has by far the most, the next two are close, and Disney has by far the least. With more time/ skill I am going
 #to figure out how to get the actual number to be displayed on each section. 
   
+>>>>>>> fab0b16e8c4624164bdb860120025dfdadc71623
