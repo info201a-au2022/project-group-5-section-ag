@@ -57,7 +57,7 @@ Average_per_platform_movie<- data.frame(
 
 
 
-<<<<<<< HEAD
+
 
 
 
@@ -67,13 +67,10 @@ Average_per_platform_movie<- data.frame(
 
 #############################
 
-bar_graph_perf <- ggplot(Average_per_platform, aes(x=Platform, y=Rotten_Tomato_Score)) +
-=======
 bar_graph_perf <- (ggplot(Average_per_platform, aes(x=Platform, y=Rotten_Tomato_Score)) +
->>>>>>> 852f18a740f1d2c8441dea0e931ac6a60c1d25cb
   geom_bar(stat = "identity") +
-  ggtitle("Rotten Tomato Score By Service"))
-
+  ggtitle("Rotten Tomato Score By Service")) 
+ggplotly(bar_graph_perf)
 
 #This is a simple bar graph that shows the average rotten tomato score across every show offered through the four main streaming platforms.
 #Rotten Tomato is one of the most reputable rating devices out there so it gives prospective key information into what streaming service

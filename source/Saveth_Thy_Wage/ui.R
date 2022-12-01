@@ -10,15 +10,16 @@ library(shiny)
 
 #Creating UI for our project
 ui <- fluidPage(theme = shinytheme("cyborg"),
-  navbarPage("Savethy Thy Wage",
+  navbarPage("Saveth Thy Wage",
    tabPanel("Movies",
     titlePanel("Interactive Visualizations for Movies on Streaming Platforms"
      ),
     
     ),
    tabPanel("TV Shows",
-     titlePanel("Interactive Visualizations for TV Shows on Streaming Platforms"
-    )
+     titlePanel("Interactive Visualizations for TV Shows on Streaming Platforms",
+        plotOutput("scatter")
+     )
    ),
    navbarMenu("About",
               tabPanel("Summary Information",

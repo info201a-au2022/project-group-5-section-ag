@@ -17,7 +17,7 @@ Hulu_count_tv <- pie_all_data %>%
   filter(Platform == "Hulu") %>%
   summarise(count = n())
 
-Disney._count_tv <- pie_all_data %>% 
+Disney_count_tv <- pie_all_data %>% 
   filter(Platform == "Disney.") %>%
   summarise(count = n())
 
@@ -27,7 +27,7 @@ Prime.Video_count_tv <- pie_all_data %>%
 
 Count_per_platform_tv <- data.frame(
   Platform=c("Netflix", "Disney.", "Prime.Video", "Hulu") , 
-  Number_Of_Shows=c(netflix_count$count, Disney._count$count, Prime.Video_count$count, Hulu_count$count)
+  Number_Of_Shows=c(netflix_count_tv$count, Disney_count_tv$count, Prime.Video_count_tv$count, Hulu_count_tv$count)
 )
 
 num_of_shows <- ggplot(Count_per_platform, aes(x="", y=Number_Of_Shows, fill=Platform))+
@@ -45,7 +45,7 @@ Hulu_count_movie <- pie_movie_data %>%
   filter(Platform == "Hulu") %>%
   summarise(count = n())
 
-Disney._count_movie <- pie_movie_data %>% 
+Disney_count_movie <- pie_movie_data %>% 
   filter(Platform == "Disney.") %>%
   summarise(count = n())
 
@@ -55,7 +55,7 @@ Prime.Video_count_movie <- pie_movie_data %>%
 
 Count_per_platform_movie <- data.frame(
   Platform=c("Netflix", "Disney.", "Prime.Video", "Hulu") , 
-  Number_Of_movies=c(netflix_count_movie$count, Disney._count_movie$count, Prime.Video_count_movie$count, Hulu_count_movie$count)
+  Number_Of_movies=c(netflix_count_movie$count, Disney_count_movie$count, Prime.Video_count_movie$count, Hulu_count_movie$count)
 )
 
 num_of_movies <- ggplot(Count_per_platform_movie, aes(x="", y=Number_Of_movies, fill=Platform))+

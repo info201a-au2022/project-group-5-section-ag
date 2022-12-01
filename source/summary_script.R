@@ -59,7 +59,7 @@ summary_table <- tv_data_long%>%
                                                  Lowest_Rated_IMDb = min(IMDb_new,na.rm = TRUE),
                                                  Highest_Rated_RT = min(Rotten_Tomatoes_new, na.rm = TRUE),
                                                  Standard_Deviation_IMDb = sd(IMDb_new,na.rm = TRUE))
-<<<<<<< HEAD:data/summary_script.R
+
 
 #########################################
 #########################################
@@ -130,7 +130,7 @@ Average_per_platform <- data.frame(x = c("Disney","Hulu","Netflix","Prime.Video"
 # Barplot
 cyber_bars(Average_per_platform, area = FALSE, bg.col = "black")
 
-<<<<<<< HEAD
+
 
 ####### Scatter Plot######
 #Scatterplot comparing different IMDb ratings across streaming services
@@ -162,13 +162,7 @@ ggplot(Average_per_platform2, aes(x=Platform, y=IMDb_Score))+
   ggtitle("IMDb Score By Service")
 #################################################
 ##################################################
-=======
->>>>>>> 8ed381e869d6f74d8bb1edd2087662655a4b601a
-family_friendly <- tv_shows %>% 
-  mutate(across('Age',str_replace,'\\+',"")) %>% 
-  group_by(Year , Age) %>% 
-  summarise(avg_age_rating = mean(as.numeric(Age)),
-            avg_year = mean(Year))
+
 
 
 

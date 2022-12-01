@@ -27,9 +27,10 @@ Average_per_platform2 <- data.frame(
 scatter_for_imdb <- ggplot(Average_per_platform2, aes(x=Platform, y=IMDb_Score))+
   geom_point(stat = "identity")+
   ggtitle("IMDb Score By Service")
-
-############################################
+interactive_scatter <- ggplotly(scatter_for_imdb)
+#-----------------------------------------------------------------------------#
 #code for Movie data frame which isused for scatter plot
+
 scatter_movie_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Movie_data_long.csv")
 
 #instead of using IMDb for scatter plot, the movies scatter plot will use Rotten Tomatoes(RT)
@@ -58,7 +59,8 @@ Average_per_service <- data.frame(
 scatter_for_RT <- ggplot(Average_per_service, aes(x=Platform, y=Rotten_tomatoe_score))+
   geom_point(stat = "identity")+
   ggtitle("Rotten Tomatoe Rating By Service")
-############################################
+
+interactive_scatter_movies <- ggplotly(scatter_for_RT)
 
 #This graph shows us the average IMBd score across every show offered by the 4 main streaming platforms. We choose to do this because
 #there are so many different platforms out there and we wanted to find a way to depict which one is the best. As you can see from this graph, 

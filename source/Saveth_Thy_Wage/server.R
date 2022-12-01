@@ -5,25 +5,17 @@
 # Find out more about building applications with Shiny here:
 #
 #    http://shiny.rstudio.com/
-#
-library(dplyr)
-source("../source/BarGraph.R")
-source("../source/Scatterplot.R")
-source("../source/PieChart.R")
 
-
-file.choose("BarGraph.R")
-
-
-
-
-library(shiny)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
 
-    output$distPlot <- renderPlot({
-      
+  
+  output$scatter <- renderPlot({
+    bar_graph_perf <- (ggplot(Average_per_platform, aes(x=Platform, y=Rotten_Tomato_Score)) +
+                         geom_bar(stat = "identity") +
+                         ggtitle("Rotten Tomato Score By Service")) 
+    return(bar_graph_perf)
     })
 
 })
