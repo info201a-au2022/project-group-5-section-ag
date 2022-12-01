@@ -6,28 +6,29 @@
 #
 #    http://shiny.rstudio.com/
 #
-
 library(shiny)
 
-# Define UI for application that draws a histogram
-shinyUI(fluidPage(
-
-    # Application title
-    titlePanel("Old Faithful Geyser Data"),
-
-    # Sidebar with a slider input for number of bins
-    sidebarLayout(
-        sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
-        ),
-
-        # Show a plot of the generated distribution
-        mainPanel(
-            plotOutput("distPlot")
-        )
+#Creating UI for our project
+ui <- fluidPage(theme = shinytheme("cyborg"),
+  navbarPage("Savethy Thy Wage",
+   tabPanel("Movies",
+    titlePanel("Interactive Visualizations for Movies on Streaming Platforms"
+     )
+    ),
+   tabPanel("TV Shows",
+     titlePanel("Interactive Visualizations for TV Shows on Streaming Platforms"
     )
-))
+   ),
+   navbarMenu("About",
+              tabPanel("Summary Information",
+                       titlePanel("Summary Information on Streaming Platforms")
+              ),
+              tabPanel("The Authors")   
+   )
+   )
+  )
+
+ 
+#Second Tab with information regarding TV shows and their graphs
+
+ 
