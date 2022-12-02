@@ -30,7 +30,7 @@ Count_per_platform_tv <- data.frame(
   Number_Of_Shows=c(netflix_count_tv$count, Disney_count_tv$count, Prime.Video_count_tv$count, Hulu_count_tv$count)
 )
 
-num_of_shows <- ggplot(Count_per_platform, aes(x="", y=Number_Of_Shows, fill=Platform))+
+num_of_shows <- ggplot(Count_per_platform_tv, aes(x="", y=Number_Of_Shows, fill=Platform))+
   geom_bar(stat = "identity")+
   coord_polar("y", start=0)+
   ggtitle("Number Of Shows Per Platform")

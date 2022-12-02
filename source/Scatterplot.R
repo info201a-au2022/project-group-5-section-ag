@@ -60,7 +60,7 @@ scatter_for_RT <- ggplot(Average_per_service, aes(x=Platform, y=Rotten_tomatoe_s
   geom_point(stat = "identity")+
   ggtitle("Rotten Tomatoe Rating By Service")
 
-interactive_scatter_movies <- ggplotly(scatter_for_RT)
+interactive_scatter_movies <- print(ggplotly(scatter_for_RT))
 
 #This graph shows us the average IMBd score across every show offered by the 4 main streaming platforms. We choose to do this because
 #there are so many different platforms out there and we wanted to find a way to depict which one is the best. As you can see from this graph, 
