@@ -27,7 +27,7 @@ Prime.Video_count_tv <- pie_all_data %>%
 
 Count_per_platform_tv <- data.frame(
   Platform=c("Netflix", "Disney.", "Prime.Video", "Hulu") , 
-  Number_Of_Shows=c(netflix_count_tv$count, Disney_count_tv$count, Prime.Video_count_tv$count, Hulu_count_tv$count)
+  Shows=c(netflix_count_tv$count, Disney_count_tv$count, Prime.Video_count_tv$count, Hulu_count_tv$count)
 )
 
 num_of_shows <- ggplot(Count_per_platform_tv, aes(x="", y=Number_Of_Shows, fill=Platform))+
@@ -55,13 +55,29 @@ Prime.Video_count_movie <- pie_movie_data %>%
 
 Count_per_platform_movie <- data.frame(
   Platform=c("Netflix", "Disney.", "Prime.Video", "Hulu") , 
-  Number_Of_movies=c(netflix_count_movie$count, Disney_count_movie$count, Prime.Video_count_movie$count, Hulu_count_movie$count)
+  Movies=c(netflix_count_movie$count, Disney_count_movie$count, Prime.Video_count_movie$count, Hulu_count_movie$count)
 )
 
-num_of_movies <- ggplot(Count_per_platform_movie, aes(x="", y=Number_Of_movies, fill=Platform))+
+num_of_movies <- ggplot(Count_per_platform_movie, aes(x="", y=Movies, fill=Platform))+
   geom_bar(stat = "identity")+
   coord_polar("y", start=0)+
   ggtitle("Number Of movies Per Platform")
+
+final_bargraph_data <- left_join(Count_per_platform_movie, Count_per_platform_tv)
+
+library(tidyr)
+
+final_bargraph <- final_bargraph_data %>% 
+  pivot_longer(Movies:Shows, names_to = "Content", values_to = "Number") %>% 
+  ggplot(aes(Platform, Number, fill = Content)) +
+  geom_col(position = "dodge")
+
+interactive_bargraph <- ggplotly(final_bargraph)
+
+# recall_contribs %>%
+#pivot_longer(opponents:supporters, names_to = "donator", values_to = "value") %>%
+ # ggplot(aes(city, value, fill = donator)) +
+ # geom_col(position = "dodge")
 
 
   ###########################################################

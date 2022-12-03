@@ -7,6 +7,7 @@
 #    http://shiny.rstudio.com/
 
 library(shiny)
+
 #Creating server to render interactive plots 
 shinyServer(function(input, output) {
 
