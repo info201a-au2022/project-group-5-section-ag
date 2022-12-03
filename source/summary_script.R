@@ -10,7 +10,7 @@ movies_streaming <- read.csv(
 "https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/MoviesOnStreamingPlatforms.csv") 
 
 #Dataset 2
-<<<<<<< HEAD:data/summary_script.R
+
 tv_shows <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
  #install.packages("devtools")
 devtools::install_github("R-CoderDotCom/cyberpunk")
@@ -19,11 +19,11 @@ View(tv_data_long)
 library(dplyr)
 library(ggplot2)
 #Creating list about Tv show data set that reveals information (summarize)
-=======
+
 tv_data_long <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
 
 file <- ("info201/assignments/project-group-5-section-ag/data/MoviesOnStreamingPlatforms.csv")
->>>>>>> daca66c2164ce7a004d53a9e866e5f39a96d3afc:source/summary_script.R
+
 
 #Number of shows per service
 number_of_shows_Netflix <- tv_data_long %>%  
@@ -59,7 +59,7 @@ summary_table <- tv_data_long%>%
                                                  Lowest_Rated_IMDb = min(IMDb_new,na.rm = TRUE),
                                                  Highest_Rated_RT = min(Rotten_Tomatoes_new, na.rm = TRUE),
                                                  Standard_Deviation_IMDb = sd(IMDb_new,na.rm = TRUE))
-
+View(summary_table)
 
 #########################################
 #########################################
@@ -160,6 +160,12 @@ Average_per_platform2 <- data.frame(
 ggplot(Average_per_platform2, aes(x=Platform, y=IMDb_Score))+
   geom_point(stat = "identity")+
   ggtitle("IMDb Score By Service")
+
+
+
+
+
+
 #################################################
 ##################################################
 

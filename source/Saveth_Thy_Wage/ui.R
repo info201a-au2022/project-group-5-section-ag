@@ -6,12 +6,26 @@
 #
 #    http://shiny.rstudio.com/
 #
+#Notes from meeting
+
+# Combine number of movies and tv shows onto one bar graph
+# Scatterplot representing all tv shows and their rotten  
+# Summary information page 
+
+
+
+
+
+
+
 
 
 #Creating UI for our project
 ui <- fluidPage(theme = shinytheme("paper"),
   navbarPage("Saveth Thy Wage",
-   tabPanel("Movies",
+   tabPanel("Introduction"
+    ),
+    tabPanel("Amount of Content by Platform",
     titlePanel("Interactive Visualizations for Movies on Streaming Platforms"
      ),
       sidebarLayout(
@@ -19,12 +33,11 @@ ui <- fluidPage(theme = shinytheme("paper"),
         ),
           mainPanel(
             plotOutput("bargraphs_movies"),
-            plotOutput("piechart_movies"),
             plotOutput("scatter_movies")
           ),
       ),
     ),
-   tabPanel("TV Shows",
+   tabPanel("TV Show Ratings",
      titlePanel("Interactive Visualizations for TV Shows on Streaming Platforms",
      ),
       sidebarLayout(
@@ -36,7 +49,7 @@ ui <- fluidPage(theme = shinytheme("paper"),
         ),
       ),
    ),
-   navbarMenu("About",
+   navbarMenu("Summary Information",
       tabPanel("Summary Information",    
           titlePanel("Summary Information on Streaming Platforms"
                        ),
@@ -44,7 +57,7 @@ ui <- fluidPage(theme = shinytheme("paper"),
               sidebarPanel(
                 selectInput("select", label = h3("Select Streaming service"), 
                       choices = list("Netflix" = 1, "Hulu" = 2, "Amazon Prime" = 3,
-                                     "Disney" = 1), 
+                                     "Disney" = 4), 
                       selected = 1), 
               ),
                 mainPanel("main panel"
@@ -53,7 +66,7 @@ ui <- fluidPage(theme = shinytheme("paper"),
             ),
                       
               ),
-              tabPanel("The Authors")   
+      tabPanel("About the Authors")
    )
    )
   )

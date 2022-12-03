@@ -9,7 +9,6 @@ bar_movie_data <- read.csv("https://raw.githubusercontent.com/info201a-au2022/pr
 
 library(ggplot2)
 
-?summarise
 # Bar graph filtering for Tv shows by platform
 netflix_rotten_tomato_tv <- bar_all_data %>% 
   filter(Platform == "Netflix") %>% 

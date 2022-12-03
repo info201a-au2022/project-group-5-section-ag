@@ -12,12 +12,12 @@ shinyServer(function(input, output) {
 
   
   output$bargraphs_movies <- renderPlot({
-    bar_graph_perf<-(ggplot(Average_per_platform, aes(x=Platform, y=Rotten_Tomato_Score)) +
-                         geom_bar(stat = "identity") +
-                         ggtitle("Rotten Tomato Score By Service"))
-    bar_graph_perf
+   ggplot(Average_per_platform, aes(x=Platform, y=Rotten_Tomato_Score)) +
+    geom_bar(stat = "identity") +
+    ggtitle("Rotten Tomato Score By Service")
+
     })
-  
+
   output$piechart_movies <- renderPlot({
     num_of_movies <- ggplot(Count_per_platform_movie, aes(x="", y=Number_Of_movies, fill=Platform))+
       geom_bar(stat = "identity")+
@@ -50,6 +50,8 @@ shinyServer(function(input, output) {
     ggtitle("IMDb Score By Service")
     scatter_for_imdb
   })
-  
+  output$plotname <- renderPlot({
+    input$select
+  })
 
 })
