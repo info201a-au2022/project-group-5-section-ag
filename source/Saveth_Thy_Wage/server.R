@@ -7,6 +7,10 @@
 #    http://shiny.rstudio.com/
 
 library(shiny)
+library(tidyr)
+library(ggplot2)
+library(dplyr)
+
 
 #Creating server to render interactive plots 
 shinyServer(function(input, output) {
@@ -43,10 +47,5 @@ output$summary <- renderTable({
     filter(Platform == input$select)
   table
 })
-  
-  
-  
-  
-  
   
 })

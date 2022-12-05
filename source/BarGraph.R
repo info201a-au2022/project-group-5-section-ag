@@ -66,7 +66,7 @@ Average_per_platform_movie<- data.frame(
 
 #############################
 
-bar_graph_perf <- (ggplot(Average_per_platform, aes(x=Platform, y=Rotten_Tomato_Score)) +
+bar_graph_perf <- (ggplot(Average_per_platform_movie, aes(x=Platform, y=Rotten_Tomato_Score)) +
   geom_bar(stat = "identity") +
   ggtitle("Rotten Tomato Score By Service")) 
 interactive_bar_graph_movies <- ggplotly(bar_graph_perf)

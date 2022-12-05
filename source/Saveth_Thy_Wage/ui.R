@@ -13,8 +13,11 @@
 # Summary information page 
 
 
-
-
+library(plotly)
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(shinythemes)
 
 
 
@@ -71,7 +74,7 @@ ui <- fluidPage(theme = shinytheme("paper"),
       ),
    ),
    navbarMenu("Summary Information",
-      tabPanel("Summary Information",    
+      tabPanel("Summary Information",
           titlePanel("Summary Information on Streaming Platforms"
                        ),
             sidebarLayout(
@@ -85,7 +88,8 @@ ui <- fluidPage(theme = shinytheme("paper"),
                   
                 ),
             ),
-                      
+             tabPanel("Report Page"
+                      ),         
               ),
    )
    )
