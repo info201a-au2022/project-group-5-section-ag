@@ -43,7 +43,7 @@ final_bargraph
   output$scatter_tv <- renderPlotly({
     scatter_for_shows <- 
         ggplot(data = tv_data_long) + 
-          geom_point(mapping = aes(x = IMDb_new , y = Rotten_Tomatoes_new , color = Platform)) + 
+          geom_point(mapping = aes(x = IMDb_new , y = Rotten_Tomatoes_new , color = Platform, Title= Title)) + 
           labs(title = "TV Show ratings by platforms") +
           labs(y = "Rotten Tomatoes Rating" , x= "IMDb rating") 
     scatter_for_shows

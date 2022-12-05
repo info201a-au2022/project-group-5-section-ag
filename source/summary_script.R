@@ -23,7 +23,7 @@ library(ggplot2)
 tv_data_long <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
 
 
-library(tidyr)
+
 #Number of shows per service
 number_of_shows_Netflix <- tv_data_long %>%  
   filter(Platform== "Netflix") %>% 
@@ -129,7 +129,7 @@ Average_per_platform <- data.frame(x = c("Disney","Hulu","Netflix","Prime.Video"
 # Barplot
 cyber_bars(Average_per_platform, area = FALSE, bg.col = "black")
 
-
+View(tv_data_long)
 
 ####### Scatter Plot######
 #Scatterplot comparing different IMDb ratings across streaming services
