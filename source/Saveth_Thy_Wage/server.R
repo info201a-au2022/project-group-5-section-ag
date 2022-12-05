@@ -51,5 +51,13 @@ shinyServer(function(input, output) {
   output$plotname <- renderPlot({
     input$select
   })
-
+#Inputting image into introdcution
+ output$image <- renderPlot({
+   
+ })
+  
+  
+  
+  
+  
 })

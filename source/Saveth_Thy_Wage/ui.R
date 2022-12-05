@@ -12,10 +12,10 @@
 # Scatterplot representing all tv shows and their rotten  
 # Summary information page 
 
+title <- tags$a(href='',
+                'Diamonds Explorer', target="_blank")
 
-
-
-
+?tags
 
 
 
@@ -23,8 +23,11 @@
 #Creating UI for our project
 ui <- fluidPage(theme = shinytheme("paper"),
   navbarPage("Saveth Thy Wage",
-   tabPanel("Introduction"
+   tabPanel("Introduction",
+    titlePanel("Introduction"
     ),
+    mainPanel(img(src = 'image.jpg')),
+  ),
     tabPanel("Amount of Content by Platform",
     titlePanel("Interactive Visualizations for Movies on Streaming Platforms"
      ),
@@ -41,7 +44,11 @@ ui <- fluidPage(theme = shinytheme("paper"),
      titlePanel("Interactive Visualization for TV Shows on Streaming Platforms",
      ),
       sidebarLayout(
-        sidebarPanel("sidebar panel"
+        sidebarPanel(
+          selectInput("select", label = h3("Select Streaming service"), 
+                                 choices = list("Netflix" , "Hulu", "Amazon Prime",
+                                                "Disney" ), 
+                                 selected = "Netflix" )
                      ),
         mainPanel(
           plotlyOutput("scatter_tv")
@@ -55,9 +62,9 @@ ui <- fluidPage(theme = shinytheme("paper"),
             sidebarLayout(
               sidebarPanel(
                 selectInput("select", label = h3("Select Streaming service"), 
-                      choices = list("Netflix" = 1, "Hulu" = 2, "Amazon Prime" = 3,
-                                     "Disney" = 4), 
-                      selected = 1), 
+                      choices = list("Netflix" , "Hulu", "Amazon Prime",
+                                     "Disney" ), 
+                      selected = "Netflix" ), 
               ),
                 mainPanel("main panel"
                   
