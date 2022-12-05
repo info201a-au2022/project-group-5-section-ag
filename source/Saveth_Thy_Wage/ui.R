@@ -12,6 +12,9 @@
 # Scatterplot representing all tv shows and their rotten  
 # Summary information page 
 
+library(tidyr)
+
+
 title <- tags$a(href='',
                 'Diamonds Explorer', target="_blank")
 

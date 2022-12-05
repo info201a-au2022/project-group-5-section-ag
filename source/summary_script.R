@@ -24,7 +24,7 @@ tv_data_long <- read.csv("https://raw.githubusercontent.com/info201a-au2022/proj
 
 file <- ("info201/assignments/project-group-5-section-ag/data/MoviesOnStreamingPlatforms.csv")
 
-
+library(tidyr)
 #Number of shows per service
 number_of_shows_Netflix <- tv_data_long %>%  
   filter(Platform== "Netflix") %>% 
