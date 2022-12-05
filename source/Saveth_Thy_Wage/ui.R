@@ -60,9 +60,9 @@ ui <- fluidPage(theme = shinytheme("paper"),
      ),
       sidebarLayout(
         sidebarPanel(
-          selectInput("select", label = h3("Select Streaming service"), 
-                                 choices = list("Netflix" , "Hulu", "Amazon Prime",
-                                                "Disney" ), 
+          selectInput("scatter", label = h3("Select Streaming service"), 
+                                 choices = list("Netflix" , "Hulu", "Prime.Video",
+                                                "Disney." ), 
                                  selected = "Netflix" )
                      ),
         mainPanel(
