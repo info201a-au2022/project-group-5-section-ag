@@ -52,10 +52,8 @@ final_bargraph
   output$plotname <- renderPlot({
     input$select
   })
-#Inputting image into introdcution
- output$image <- renderPlot({
-   
- })
+
+
   
   
   
