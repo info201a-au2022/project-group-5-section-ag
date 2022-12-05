@@ -14,11 +14,12 @@ library(plotly)
 shinyServer(function(input, output) {
 
   
-  output$bargraphs_movies <- renderPlot({
-   ggplot(Average_per_platform, aes(x=Platform, y=Rotten_Tomato_Score)) +
-    geom_bar(stat = "identity") +
-    ggtitle("Rotten Tomato Score By Service")
-
+  output$bargraphs_content <- renderPlotly({
+    final_bargraph <- final_bargraph_data %>% 
+      pivot_longer(Movies:Shows, names_to = "Content", values_to = "Number") %>% 
+      ggplot(aes(Platform, Number, fill = Content)) +
+      geom_col(position = "dodge")
+final_bargraph
     })
 
   output$piechart_movies <- renderPlot({
@@ -44,7 +45,7 @@ shinyServer(function(input, output) {
   output$scatter_tv <- renderPlotly({
     scatter_for_shows <- 
         ggplot(data = tv_data_long) + 
-          geom_point(mapping = aes(x = IMDb_new , y = Rotten_Tomatoes_new , color = Platform)) + 
+          geom_point(mapping = aes(x = IMDb_new , y = Rotten_Tomatoes_new , color = Platform, Title= Title)) + 
           labs(title = "TV Show ratings by platforms") +
           labs(y = "Rotten Tomatoes Rating" , x= "IMDb rating") 
     scatter_for_shows
@@ -56,5 +57,13 @@ shinyServer(function(input, output) {
 #-------------------------------------------------------#
   #summary table based on Platform
 
+<<<<<<< HEAD
+=======
+
+  
+  
+  
+  
+>>>>>>> 1de97f2b21714bbe80ae0eca716a83c93bc420c4
   
 })

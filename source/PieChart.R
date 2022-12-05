@@ -65,7 +65,7 @@ num_of_movies <- ggplot(Count_per_platform_movie, aes(x="", y=Movies, fill=Platf
 
 final_bargraph_data <- left_join(Count_per_platform_movie, Count_per_platform_tv)
 
-library(tidyr)
+
 
 final_bargraph <- final_bargraph_data %>% 
   pivot_longer(Movies:Shows, names_to = "Content", values_to = "Number") %>% 
