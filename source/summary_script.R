@@ -22,7 +22,6 @@ library(ggplot2)
 
 tv_data_long <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
 
-file <- ("info201/assignments/project-group-5-section-ag/data/MoviesOnStreamingPlatforms.csv")
 
 library(tidyr)
 #Number of shows per service
@@ -170,7 +169,7 @@ ggplot(Average_per_platform2, aes(x=Platform, y=IMDb_Score))+
 ##################################################
 #Scatter plot for services and their respective shows
 
-View(tv_data_long)
+
 
 scatter_for_shows <- 
       ggplotly(
