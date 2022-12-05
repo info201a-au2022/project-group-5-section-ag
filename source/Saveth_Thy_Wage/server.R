@@ -36,12 +36,16 @@ final_bargraph
           labs(y = "Rotten Tomatoes Rating" , x= "IMDb rating") 
      scatter_for_shows
   })
-  #Dont worry about this right now ill figure out the wdigets
-  output$plotname <- renderPlot({
-    input$select <- input$Netflix
-  })
-
-
+ 
+output$summary <- renderTable({
+  table<- 
+    summary_table %>% 
+    filter(Platform == input$select)
+  table
+})
+  
+  
+  
   
   
   

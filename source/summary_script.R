@@ -126,11 +126,6 @@ ggplot(Average_per_platform, aes(x=Platform, y=Rotten_Tomato_Score))+
 Average_per_platform <- data.frame(x = c("Disney","Hulu","Netflix","Prime.Video"),
                  y = c(1:4))
 
-# Barplot
-cyber_bars(Average_per_platform, area = FALSE, bg.col = "black")
-
-View(tv_data_long)
-
 ####### Scatter Plot######
 #Scatterplot comparing different IMDb ratings across streaming services
 
@@ -168,9 +163,6 @@ ggplot(Average_per_platform2, aes(x=Platform, y=IMDb_Score))+
 #################################################
 ##################################################
 #Scatter plot for services and their respective shows
-
-
-
 scatter_for_shows <- 
       ggplotly(
       ggplot(data = tv_data_long) + 
