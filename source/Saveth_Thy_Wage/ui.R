@@ -26,8 +26,19 @@ ui <- fluidPage(theme = shinytheme("paper"),
     titlePanel(h1("Saveth Thy Wage", align ="center")
       ),
     ),
+<<<<<<< HEAD
     mainPanel(
               img(src = "image.jpg", width = "400px" , height = "400px", align = "right")),
+=======
+    sidebarLayout(
+      sidebarPanel("A recent development that has impacted many of us has been the increase in the number of streaming services. People are forced to choose between the many platforms available or bite the bullet and pay absurd amounts of money to subscribe to each individual platform. 
+                   Because most of us do not have the option to do the later, we decided to figure out which platform is the most worth purchasing. To do so we decided to answer three main questions:
+                   1. Which streaming service has the most content (most number of shows and movies)? 2. Which platform has the highest rated TV shows? 3. Which platform has the highest rated movies? Throughout this website we explore these three questions in order to answer the most important question:
+                   how can I saveth thy wage by cutting down on the number of services I subscribe to and still get the best content out there. While this might not seem like a major problem, it has the potential to save millions of people money all around the world."),
+      mainPanel(img(src = 'image.jpg')),
+    ),
+   ),
+>>>>>>> 74380c539e6e94ca990362460e51021ad01cc03b
     tabPanel("Amount of Content by Platform",
     titlePanel("Interactive Visualizations for Movies on Streaming Platforms"
      ),
