@@ -13,7 +13,6 @@ movies_streaming <- read.csv(
 
 tv_shows <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
  #install.packages("devtools")
-devtools::install_github("R-CoderDotCom/cyberpunk")
 View(movies_streaming)
 View(tv_shows)
 library(dplyr)

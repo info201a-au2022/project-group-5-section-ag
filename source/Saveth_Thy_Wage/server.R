@@ -41,7 +41,7 @@ final_bargraph
 #--------------------------------------------------------------------#
 #Now doing outputs for TV Shows.
 
-  
+  source("~/documents/info201/assignments/project-group-5-section-ag/source/summary_script.R")
   output$scatter_tv <- renderPlotly({
     scatter_for_shows <- 
         ggplot(data = tv_data_long) + 
@@ -57,8 +57,11 @@ final_bargraph
 #-------------------------------------------------------#
   #summary table based on Platform
 
-<<<<<<< HEAD
-=======
+#<<<<<<< HEAD
+source("~/documents/info201/assignments/project-group-5-section-ag/source/summary_script.R")
+  output$summary_table <- renderUI({
+    selectInput("Platform", "choose Platform", choices = unique(data = tv_data_long$Platform))
+  })
 
   
   
