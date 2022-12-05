@@ -89,6 +89,9 @@ ui <- fluidPage(theme = shinytheme("paper"),
              tabPanel("Report Page"
                       ),         
               ),
+
+      tabPanel("Report Page"),
+
    )
    )
  
