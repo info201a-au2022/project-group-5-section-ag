@@ -12,11 +12,12 @@ library(shiny)
 shinyServer(function(input, output) {
 
   
-  output$bargraphs_movies <- renderPlot({
-   ggplot(Average_per_platform, aes(x=Platform, y=Rotten_Tomato_Score)) +
-    geom_bar(stat = "identity") +
-    ggtitle("Rotten Tomato Score By Service")
-
+  output$bargraphs_content <- renderPlotly({
+    final_bargraph <- final_bargraph_data %>% 
+      pivot_longer(Movies:Shows, names_to = "Content", values_to = "Number") %>% 
+      ggplot(aes(Platform, Number, fill = Content)) +
+      geom_col(position = "dodge")
+final_bargraph
     })
 
   output$piechart_movies <- renderPlot({

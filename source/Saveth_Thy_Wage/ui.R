@@ -29,11 +29,10 @@ ui <- fluidPage(theme = shinytheme("paper"),
     titlePanel("Interactive Visualizations for Movies on Streaming Platforms"
      ),
       sidebarLayout(
-        sidebarPanel("sidebar panel"        
+        sidebarPanel("The first key in understanding the differences in streaming platforms is the pure number of content available on each platform. If you want to choose a platform to buy you want to know that you are getting as much content as possible for your dollar. It also is important to see what has more when comparing movies and shows because you as an individual might be more interested in one of the two. When looking at the data it is interesting to see that there is a clear gap between the first two and the second two in terms of the number of movies. Netflix and Prime Video have roughly 4x as many movies as Disney and Hulu. This shows that if you mainly watch movies you should strongly consider Netflix and Prime video. When it comes to shows there is again a large gap between Disney and the rest of the platforms. Disney has only 351 shows in comparison to the other three that all sit around 2000. In total these stats would be the first thing to consider when looking at platforms to subscribe to."        
         ),
           mainPanel(
-            plotOutput("bargraphs_movies"),
-            plotOutput("scatter_movies")
+            plotlyOutput("bargraphs_content"),
           ),
       ),
     ),
