@@ -168,56 +168,18 @@ ggplot(Average_per_platform2, aes(x=Platform, y=IMDb_Score))+
 
 #################################################
 ##################################################
+#Scatter plot for services and their respective shows
 
+View(tv_data_long)
 
+scatter_for_shows <- 
+      ggplotly(
+      ggplot(data = tv_data_long) + 
+      geom_point(mapping = aes(x = IMDb_new , y = Rotten_Tomatoes_new , color = Platform)) + 
+      labs(title = "TV Show ratings by platforms") +
+      labs(y = "Rotten Tomatoes Rating" , x= "IMDb rating")) 
 
+      
+print(scatter_for_shows)
 
-
-
-
-
-
-
-
-
-
-View(shows_per_service)
-
-#Average Rating Per Service IMDB
-
-
-#Average Rating Per Service Rotten 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> daca66c2164ce7a004d53a9e866e5f39a96d3afc:source/summary_script.R
-
-# family_friendly <- tv_shows %>% 
-#   mutate(across('Age',str_replace,'\\+',"")) %>% 
-#   group_by(Year , Age) %>% 
-#   summarise(avg_age_rating = mean(as.numeric(Age)),
-#             avg_year = mean(Year))
 

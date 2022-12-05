@@ -38,14 +38,13 @@ ui <- fluidPage(theme = shinytheme("paper"),
       ),
     ),
    tabPanel("TV Show Ratings",
-     titlePanel("Interactive Visualizations for TV Shows on Streaming Platforms",
+     titlePanel("Interactive Visualization for TV Shows on Streaming Platforms",
      ),
       sidebarLayout(
         sidebarPanel("sidebar panel"
                      ),
         mainPanel(
-          plotOutput("piechart_tv"),
-          plotOutput("scatter_tv")
+          plotlyOutput("scatter_tv")
         ),
       ),
    ),

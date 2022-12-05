@@ -37,20 +37,17 @@ shinyServer(function(input, output) {
   
 #--------------------------------------------------------------------#
 #Now doing outputs for TV Shows.
-  output$piechart_tv <- renderPlot({
-    piechart_shows <- ggplot(Count_per_platform_tv, aes(x="", y=Number_Of_Shows, fill=Platform))+
-      geom_bar(stat = "identity")+
-      coord_polar("y", start=0)+
-      ggtitle("Number Of Shows Per Platform")
-    piechart_shows
-  })
+
   
-  output$scatter_tv <- renderPlot({
-    scatter_for_imdb <- ggplot(Average_per_platform2, aes(x=Platform, y=IMDb_Score))+
-    geom_point(stat = "identity")+
-    ggtitle("IMDb Score By Service")
-    scatter_for_imdb
+  output$scatter_tv <- renderPlotly({
+    scatter_for_shows <- 
+        ggplot(data = tv_data_long) + 
+          geom_point(mapping = aes(x = IMDb_new , y = Rotten_Tomatoes_new , color = Platform)) + 
+          labs(title = "TV Show ratings by platforms") +
+          labs(y = "Rotten Tomatoes Rating" , x= "IMDb rating") 
+    scatter_for_shows
   })
+  #Dont worry about this right now ill figure out the wdigets
   output$plotname <- renderPlot({
     input$select
   })
