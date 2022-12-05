@@ -5,8 +5,10 @@
 # Find out more about building applications with Shiny here:
 #
 #    http://shiny.rstudio.com/
-
+library(tidyverse)
 library(shiny)
+library(ggplot2)
+library(plotly)
 
 #Creating server to render interactive plots 
 shinyServer(function(input, output) {
@@ -51,5 +53,8 @@ shinyServer(function(input, output) {
   output$plotname <- renderPlot({
     input$select
   })
+#-------------------------------------------------------#
+  #summary table based on Platform
 
+  
 })

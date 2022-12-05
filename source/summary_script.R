@@ -15,7 +15,7 @@ tv_shows <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-
  #install.packages("devtools")
 devtools::install_github("R-CoderDotCom/cyberpunk")
 View(movies_streaming)
-View(tv_data_long)
+View(tv_shows)
 library(dplyr)
 library(ggplot2)
 #Creating list about Tv show data set that reveals information (summarize)
@@ -60,6 +60,67 @@ summary_table <- tv_data_long%>%
                                                  Highest_Rated_RT = min(Rotten_Tomatoes_new, na.rm = TRUE),
                                                  Standard_Deviation_IMDb = sd(IMDb_new,na.rm = TRUE))
 View(summary_table)
+
+
+#------------------Netflix tv shows summary--------------------#
+netflix_summary_table <- tv_shows %>% 
+  filter(Platform == "Netflix") %>% 
+  summarise(RT_mean = mean(Rotten_Tomatoes_new),
+            IMDb_mean= mean(IMDb_new, na.rm = TRUE),
+            Highest_Rated_IMDb = max(IMDb_new,na.rm = TRUE),
+            Highest_Rated_RT = max(Rotten_Tomatoes_new,na.rm = TRUE),
+            Lowest_Rated_IMDb = min(IMDb_new,na.rm = TRUE),
+            Highest_Rated_RT = min(Rotten_Tomatoes_new, na.rm = TRUE),
+            Lowest_Rated_RT = min(Rotten_Tomatoes_new,na.rm = TRUE),
+            
+            )
+
+View(netflix_summary_table)
+#---------------Hulu tv shows 
+
+hulu_summary_table <- tv_shows %>% 
+  filter(Platform == "Hulu") %>% 
+  summarise(RT_mean = mean(Rotten_Tomatoes_new),
+            IMDb_mean= mean(IMDb_new, na.rm = TRUE),
+            Highest_Rated_IMDb = max(IMDb_new,na.rm = TRUE),
+            Highest_Rated_RT = max(Rotten_Tomatoes_new,na.rm = TRUE),
+            Lowest_Rated_IMDb = min(IMDb_new,na.rm = TRUE),
+            Highest_Rated_RT = min(Rotten_Tomatoes_new, na.rm = TRUE),
+            Lowest_Rated_RT = min(Rotten_Tomatoes_new,na.rm = TRUE),
+            
+  )
+
+View(hulu_summary_table)
+
+
+#----------------------------#
+disney_summary_table <- tv_shows %>% 
+  filter(Platform == "Disney.") %>% 
+  summarise(RT_mean = mean(Rotten_Tomatoes_new),
+            IMDb_mean= mean(IMDb_new, na.rm = TRUE),
+            Highest_Rated_IMDb = max(IMDb_new,na.rm = TRUE),
+            Highest_Rated_RT = max(Rotten_Tomatoes_new,na.rm = TRUE),
+            Lowest_Rated_IMDb = min(IMDb_new,na.rm = TRUE),
+            Highest_Rated_RT = min(Rotten_Tomatoes_new, na.rm = TRUE),
+            Lowest_Rated_RT = min(Rotten_Tomatoes_new,na.rm = TRUE),
+            
+  )
+
+View(disney_summary_table)
+#-------------------------------#
+prime_summary_table <- tv_shows %>% 
+  filter(Platform == "Prime.Video") %>% 
+  summarise(RT_mean = mean(Rotten_Tomatoes_new),
+            IMDb_mean= mean(IMDb_new, na.rm = TRUE),
+            Highest_Rated_IMDb = max(IMDb_new,na.rm = TRUE),
+            Highest_Rated_RT = max(Rotten_Tomatoes_new,na.rm = TRUE),
+            Lowest_Rated_IMDb = min(IMDb_new,na.rm = TRUE),
+            Highest_Rated_RT = min(Rotten_Tomatoes_new, na.rm = TRUE),
+            Lowest_Rated_RT = min(Rotten_Tomatoes_new,na.rm = TRUE),
+            
+  )
+
+View(prime_summary_table)
 
 #########################################
 #########################################

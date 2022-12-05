@@ -7,7 +7,9 @@
 #    http://shiny.rstudio.com/
 #
 #Notes from meeting
-
+library(shinythemes)
+library(ggplot2)
+library(plotly)
 # Combine number of movies and tv shows onto one bar graph
 # Scatterplot representing all tv shows and their rotten  
 # Summary information page 
@@ -58,10 +60,14 @@ ui <- fluidPage(theme = shinytheme("paper"),
                       choices = list("Netflix" = 1, "Hulu" = 2, "Amazon Prime" = 3,
                                      "Disney" = 4), 
                       selected = 1), 
+                uiOutput("table_hulu"),
+                
               ),
-                mainPanel("main panel"
+                mainPanel("what is today?",
+                        
                   
                 ),
+          
             ),
                       
               ),
