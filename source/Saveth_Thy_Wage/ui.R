@@ -33,27 +33,36 @@ ui <- fluidPage(
                  "Saveth Thy Wage",
                  align = "center",
                  h5(
-                   "   A recent development that has impacted many of us has been the increase in the number of streaming services. People are forced to choose between the many platforms available or bite the bullet and pay absurd amounts of money to subscribe to each individual platform.
-                   Because most of us do not have the option to do the later, we decided to figure out which platform is the most worth purchasing. To do so we decided to answer three main questions:
-                   1. Which streaming service has the most content (most number of shows and movies)? 2. Which platform has the highest rated TV shows? 3. Which platform has the highest rated movies? Throughout this website we explore these three questions in order to answer the most important question:
-<<<<<<< Updated upstream
-                   how can I saveth thy wage by cutting down on the number of services I subscribe to and still get the best content out there. While this might not seem like a major problem, it has the potential to save millions of people money all around the world. The thing that is super important to consider in order to contextualize the data found in this website is the prices of the various platforms. This will help you make your choices and interpret the data. Of the analyzed platforms Disney+ comes in at the cheapest for $8/ month followed by Hulu at $13/ month, Prime video at $15/ month, and Netflix at $20/ month.",
-                                                        )),
-=======
-                   how can I saveth thy wage by cutting down on the number of services I subscribe to and still get the best content out there. While this might not seem like a major problem, it has the potential to save millions of people money all around the world.",
-                 )
->>>>>>> Stashed changes
-               ),
-             ),
-             mainPanel(width = 9,
+                   "A recent development that has impacted many of us has been the increase in the number of streaming services. 
+                   People are forced to choose between the many platforms available or bite the bullet and pay absurd amounts of 
+                   money to subscribe to each individual platform.
+                   Because most of us do not have the option to do the later, we decided to figure out which platform is the most 
+                   worth purchasing. To do so we decided to answer three main questions:
+                   1. Which streaming service has the most content (most number of shows and movies)? 2. Which platform has the highest 
+                   rated TV shows? 3. Which platform has the highest rated movies? Throughout this website we explore these three 
+                   questions in order to answer the most important question:
+                   how can I saveth thy wage by cutting down on the number of services I subscribe to and still get the best content 
+                   out there. While this might not seem like a major problem, it has the potential to save millions of people money 
+                   all around the world. The thing that is super important to consider in order to contextualize the data found in this 
+                   website is the prices of the various platforms. This will help you make your choices and interpret the data. Of the 
+                   analyzed platforms Disney+ comes in at the cheapest for $8/ month followed by Hulu at $13/ month, Prime video at $15/ 
+                   month, and Netflix at $20/ month.",
+                                                     ),
+                 ),
+
+             
+                 ),
+                  mainPanel(width = 9,
                        h1(
-                         img(
-                           src = "image.jpg",
+                         img(src = "image.jpg",
                            width = "500px" ,
                            height = "500px",
                            align = "right"
-                         )
-                       ),),),
+                         ),
+                       ),
+                  ),
+               ),
+             
     tabPanel(
       "Amount of Content by Platform",
       titlePanel("Interactive Visualizations for Movies on Streaming Platforms"),
@@ -76,48 +85,19 @@ ui <- fluidPage(
     tabPanel(
       "TV Show Ratings",
       titlePanel("Interactive Visualization for TV Shows on Streaming Platforms",),
-      sidebarLayout(sidebarPanel(
+      sidebarLayout(
+        sidebarPanel(
         selectInput(
           "scatter",
           label = h3("Select Streaming service"),
           choices = list("Netflix" , "Hulu", "Prime.Video",
                          "Disney."),
           selected = "Netflix"
-        )
+        ),
       ),
-      mainPanel(plotlyOutput("scatter_tv")),),
+      mainPanel(plotlyOutput("scatter_tv")),
+      ),
     ),
-    navbarMenu(
-      "Summary Information",
-      tabPanel(
-        "Summary Information",
-        titlePanel("Summary Information on Streaming Platforms"),
-        sidebarLayout(sidebarPanel(
-          selectInput(
-            "select",
-            label = h3("Select Streaming service"),
-            choices = list("Netflix" , "Hulu", "Prime.Video",
-                           "Disney."),
-            selected = "Netflix"
-          ),
-        ),
-        mainPanel(tableOutput("summary"),
-                  h3(
-                    strong("Summary Takeaways"),
-                  h6(tags$ol(
-                    tags$li("Prime Video has the most pure content on its platform."), 
-                    tags$li("Prime Video has the oldest average year of content while Netflix has the newest."), 
-                    tags$li("Netflix has the highest average show rating while Hulu has the lowest average show rating."),
-                    tags$li("There is a large gap between the number of content offered on Netflix and Prime video vs Hulu and Disney+.")
-                    
-                  )
-                  ),
-                    ),
-                  ),
-        ),
-      ),
-<<<<<<< Updated upstream
-   ),
    navbarMenu("Summary Information",
       tabPanel("Summary Information",
           titlePanel("Summary Information on Streaming Platforms"
@@ -129,23 +109,25 @@ ui <- fluidPage(
                                      "Disney." ), 
                       selected = "Netflix" ), 
               ),
-                mainPanel(tableOutput("summary")),
+            
+           mainPanel(tableOutput("summary"),
+                        h3(
+                          strong("Summary Takeaways"),
+                          h6(tags$ol(
+                            tags$li("Prime Video has the most pure content on its platform."), 
+                            tags$li("Prime Video has the oldest average year of content while Netflix has the newest."), 
+                            tags$li("Netflix has the highest average show rating while Hulu has the lowest average show rating."),
+                            tags$li("There is a large gap between the number of content offered on Netflix and Prime video vs Hulu and Disney+.")
+                            
+                          ),
                   
                 ),
             ),
-             tabPanel("Report Page"
-                      ),         
               ),
-
-      tabPanel("Report Page"),
-
-   )
-   )
- 
-
- 
-#Second Tab with information regarding TV shows and their graphs
-=======
+            ),
+           
+   ),
+             
       tabPanel("Report Page",
                titlePanel(strong("Report", align = "center"),),
                mainPanel(h2(
@@ -302,7 +284,8 @@ ui <- fluidPage(
                ),),)
     )
   )
-) 
->>>>>>> Stashed changes
+)
+
+
 
 
