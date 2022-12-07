@@ -26,16 +26,14 @@ library(shinythemes)
 ui <- fluidPage(theme = shinytheme("paper"),
   navbarPage("Saveth Thy Wage",
    tabPanel("Introduction",
-    titlePanel(h1("Saveth Thy Wage", align ="center"),
-               ),
-    mainPanel(position ="right", br(strong
-    ("   A recent development that has impacted many of us has been the increase in the number of streaming services. People are forced to choose between the many platforms available or bite the bullet and pay absurd amounts of money to subscribe to each individual platform. 
+    titlePanel(h1("Saveth Thy Wage", align ="center", h5("   A recent development that has impacted many of us has been the increase in the number of streaming services. People are forced to choose between the many platforms available or bite the bullet and pay absurd amounts of money to subscribe to each individual platform. 
                    Because most of us do not have the option to do the later, we decided to figure out which platform is the most worth purchasing. To do so we decided to answer three main questions:
                    1. Which streaming service has the most content (most number of shows and movies)? 2. Which platform has the highest rated TV shows? 3. Which platform has the highest rated movies? Throughout this website we explore these three questions in order to answer the most important question:
                    how can I saveth thy wage by cutting down on the number of services I subscribe to and still get the best content out there. While this might not seem like a major problem, it has the potential to save millions of people money all around the world.",
-                align = "right"
-      )),width = 10,
-              h1(img(src = "image.jpg", width = "400px" , height = "400px", align = "center")),
+                                                        )),
+               ),
+    mainPanel(width = 9,
+              h1(img(src = "image.jpg", width = "500px" , height = "500px", align = "right" )),
                 ),
    ),
     tabPanel("Amount of Content by Platform",
