@@ -5,6 +5,7 @@
 
 #########################################
 #########################################
+<<<<<<< HEAD
 #Dataset 1
 movies_streaming <- read.csv(
 "https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/MoviesOnStreamingPlatforms.csv") 
@@ -15,35 +16,17 @@ tv_shows <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-
  #install.packages("devtools")
 View(movies_streaming)
 View(tv_shows)
+=======
+>>>>>>> 00723f055956c39d74c17029834165e738f8131e
 library(dplyr)
 library(ggplot2)
-#Creating list about Tv show data set that reveals information (summarize)
+library(plotly)
+#Dataset updated
 
 tv_data_long <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-group-5-section-ag/main/data/Tv_data_long.csv")
 
 
-
-#Number of shows per service
-number_of_shows_Netflix <- tv_data_long %>%  
-  filter(Platform== "Netflix") %>% 
-  count(Platform)
-
-number_of_shows_Hulu <- tv_data_long %>%  
-  filter(Platform=="Hulu" ) %>% 
-  count(Platform)
-
-number_of_shows_Disney <- tv_data_long %>%  
-  filter(Platform == "Disney.") %>% 
-  count(Platform)
-
-number_of_shows_Amazon <- tv_data_long %>%  
-  filter(Platform == "Prime.Video") %>% 
-  count(Platform)
-
-shows_per_service <- data.frame(name_of_streaming_service = c("Netflix","Hulu","Amazon","Disney"),
-                                number_of_shows = c(1971,1621,1831,351))
-
-
+#Creating list about Tv show data set that reveals information (summarize)
 
 #Table Scrpit for Summary Information
 # Table summerizing the data frame of tv shows. 
@@ -57,7 +40,9 @@ summary_table <- tv_data_long%>%
                                                  Lowest_Rated_IMDb = min(IMDb_new,na.rm = TRUE),
                                                  Highest_Rated_RT = min(Rotten_Tomatoes_new, na.rm = TRUE),
                                                  Standard_Deviation_IMDb = sd(IMDb_new,na.rm = TRUE))
+
 View(summary_table)
+<<<<<<< HEAD
 
 
 #------------------Netflix tv shows summary--------------------#
@@ -219,18 +204,16 @@ Average_per_platform2 <- data.frame(
 ggplot(Average_per_platform2, aes(x=Platform, y=IMDb_Score))+
   geom_point(stat = "identity")+
   ggtitle("IMDb Score By Service")
+=======
+#This table gives a basic overview of different streaming platforms and their respective
+# ratings from different sources. This also includes the highest and lowest rating each 
+# platforms has for rotten tomatoes and IMDb when applicable.
+>>>>>>> 00723f055956c39d74c17029834165e738f8131e
 
 
 
-
-
-
-#################################################
 ##################################################
 #Scatter plot for services and their respective shows
-
-
-
 scatter_for_shows <- 
       ggplotly(
       ggplot(data = tv_data_long) + 

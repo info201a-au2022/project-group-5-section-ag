@@ -14,7 +14,11 @@ library(dplyr)
 
 #Creating server to render interactive plots 
 shinyServer(function(input, output) {
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 00723f055956c39d74c17029834165e738f8131e
   output$bargraphs_content <- renderPlotly({
     final_bargraph <- final_bargraph_data %>% 
       pivot_longer(Movies:Shows, names_to = "Content", values_to = "Number") %>% 
@@ -38,6 +42,7 @@ shinyServer(function(input, output) {
       labs(y = "Rotten Tomatoes Rating" , x= "IMDb rating") 
     scatter_for_shows
   })
+<<<<<<< HEAD
   
   output$summary <- renderTable({
     new_table <-
@@ -47,3 +52,14 @@ shinyServer(function(input, output) {
   })
   
 })
+=======
+ 
+output$summary <- renderTable({
+ new_table <-
+   summary_table %>% 
+   filter(Platform == input$select)
+ new_table
+})
+  
+})
+>>>>>>> 00723f055956c39d74c17029834165e738f8131e
