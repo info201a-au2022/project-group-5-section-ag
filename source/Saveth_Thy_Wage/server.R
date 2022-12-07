@@ -5,68 +5,45 @@
 # Find out more about building applications with Shiny here:
 #
 #    http://shiny.rstudio.com/
-library(tidyverse)
+
 library(shiny)
+library(tidyr)
 library(ggplot2)
-library(plotly)
+library(dplyr)
+
 
 #Creating server to render interactive plots 
 shinyServer(function(input, output) {
-
   
   output$bargraphs_content <- renderPlotly({
     final_bargraph <- final_bargraph_data %>% 
       pivot_longer(Movies:Shows, names_to = "Content", values_to = "Number") %>% 
       ggplot(aes(Platform, Number, fill = Content)) +
       geom_col(position = "dodge")
-final_bargraph
-    })
-
-  output$piechart_movies <- renderPlot({
-    num_of_movies <- ggplot(Count_per_platform_movie, aes(x="", y=Number_Of_movies, fill=Platform))+
-      geom_bar(stat = "identity")+
-      coord_polar("y", start=0)+
-      ggtitle("Number Of movies Per Platform")
-    num_of_movies
-  })
-
-  
-  output$scatter_movies <- renderPlot({
-    scatter_for_RT <- ggplot(Average_per_service, aes(x=Platform, y=Rotten_tomatoe_score))+
-      geom_point(stat = "identity")+
-      ggtitle("Rotten Tomatoe Rating By Service")
-    scatter_for_RT
+    final_bargraph
   })
   
-#--------------------------------------------------------------------#
-#Now doing outputs for TV Shows.
-
-  source("~/documents/info201/assignments/project-group-5-section-ag/source/summary_script.R")
+  #--------------------------------------------------------------------#
+  #Now doing outputs for TV Shows.
+  
+  
+  
   output$scatter_tv <- renderPlotly({
     scatter_for_shows <- 
-        ggplot(data = tv_data_long) + 
-          geom_point(mapping = aes(x = IMDb_new , y = Rotten_Tomatoes_new , color = Platform, Title= Title)) + 
-          labs(title = "TV Show ratings by platforms") +
-          labs(y = "Rotten Tomatoes Rating" , x= "IMDb rating") 
+      tv_data_long %>%
+      filter(Platform == input$scatter) %>%
+      ggplot() + 
+      geom_point(mapping = aes(x = IMDb_new , y = Rotten_Tomatoes_new,color = Year, Title= Title)) + 
+      labs(title = "TV Show ratings by platforms") +
+      labs(y = "Rotten Tomatoes Rating" , x= "IMDb rating") 
     scatter_for_shows
   })
-  #Dont worry about this right now ill figure out the wdigets
-  output$plotname <- renderPlot({
-    input$select
+  
+  output$summary <- renderTable({
+    new_table <-
+      summary_table %>% 
+      filter(Platform == input$select)
+    new_table
   })
-#-------------------------------------------------------#
-  #summary table based on Platform
-
-#<<<<<<< HEAD
-source("~/documents/info201/assignments/project-group-5-section-ag/source/summary_script.R")
-  output$summary_table <- renderUI({
-    selectInput("Platform", "choose Platform", choices = unique(data = tv_data_long$Platform))
-  })
-
-  
-  
-  
-  
->>>>>>> 1de97f2b21714bbe80ae0eca716a83c93bc420c4
   
 })
