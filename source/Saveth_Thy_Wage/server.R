@@ -46,7 +46,13 @@ shinyServer(function(input, output) {
   })
   
 })
+<<<<<<< HEAD
 
 
+=======
+
+ 
+  
+>>>>>>> 6a70e344bba60e837a8f4aadd94d685a2e91556f
 
 

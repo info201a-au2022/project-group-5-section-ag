@@ -200,6 +200,7 @@ ui <- fluidPage(
                                     different questions, most consumers who many choices have so these days on where to spend their money 
                                     when it comes to entertainment and television. The source is credited and the rating for some has been 
                                     verified to check for accuracy against what is shown. Below is a table with the amount of rows and columns 
+<<<<<<< HEAD
                                     for our datasets. I must thank RUCHI BHATIA and Kaggle.com for developing an essential data set that allowed us to come to these findings."),
                                                         
                                                         h3(
@@ -207,6 +208,9 @@ ui <- fluidPage(
                                                    h6(
                                                     "Movie Data Citation: Bhatia, Ruchi. “Movies on Netflix, Prime Video, Hulu and Disney+.” Kaggle, Kaggle.com, 16 Dec. 2021, https://www.kaggle.com/datasets/ruchi798/movies-on-netflix-prime-video-hulu-and-disney."),
                                                    h6("Tv show Citation Bhatia, Ruchi. “TV Shows on Netflix, Prime Video, Hulu and Disney+.” Kaggle, 2 Aug. 2021, https://www.kaggle.com/datasets/ruchi798/tv-shows-on-netflix-prime-video-hulu-and-disney. "),
+=======
+                                    for our datasets",
+>>>>>>> 6a70e344bba60e837a8f4aadd94d685a2e91556f
                                                         h3(
                                                           strong("Findings"),
                                                           h6(strong("What streaming service has the best overall value:"), "The streaming service with the best overall data 
@@ -293,4 +297,8 @@ ui <- fluidPage(
                         ),),)
     )
   )
+<<<<<<< HEAD
 )
+=======
+)
+>>>>>>> 6a70e344bba60e837a8f4aadd94d685a2e91556f
