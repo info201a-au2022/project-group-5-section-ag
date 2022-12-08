@@ -16,8 +16,7 @@ tv_shows <- read.csv("https://raw.githubusercontent.com/info201a-au2022/project-
  #install.packages("devtools")
 View(movies_streaming)
 View(tv_shows)
-=======
->>>>>>> 00723f055956c39d74c17029834165e738f8131e
+
 library(dplyr)
 library(ggplot2)
 library(plotly)
@@ -41,8 +40,7 @@ summary_table <- tv_data_long%>%
                                                  Highest_Rated_RT = min(Rotten_Tomatoes_new, na.rm = TRUE),
                                                  Standard_Deviation_IMDb = sd(IMDb_new,na.rm = TRUE))
 
-View(summary_table)
-<<<<<<< HEAD
+
 
 
 #------------------Netflix tv shows summary--------------------#
@@ -204,12 +202,10 @@ Average_per_platform2 <- data.frame(
 ggplot(Average_per_platform2, aes(x=Platform, y=IMDb_Score))+
   geom_point(stat = "identity")+
   ggtitle("IMDb Score By Service")
-=======
+
 #This table gives a basic overview of different streaming platforms and their respective
 # ratings from different sources. This also includes the highest and lowest rating each 
 # platforms has for rotten tomatoes and IMDb when applicable.
->>>>>>> 00723f055956c39d74c17029834165e738f8131e
-
 
 
 ##################################################
