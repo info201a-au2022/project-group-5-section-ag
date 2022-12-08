@@ -3,7 +3,7 @@ library(shinythemes)
 library(ggplot2)
 library(plotly)
 
-
+install.packages("rsconnect")
 
 library("shiny")
 source("ui.R")

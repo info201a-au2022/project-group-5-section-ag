@@ -31,20 +31,29 @@ tv_data_long <- read.csv("https://raw.githubusercontent.com/info201a-au2022/proj
 #Table Scrpit for Summary Information
 # Table summerizing the data frame of tv shows. 
 
-summary_table <- tv_data_long%>% 
-  group_by(Platform) %>% 
-  summarise(avg_Rotten_Tomato = mean(Rotten_Tomatoes_new), 
-                                                 avg_IMDB = mean(IMDb_new, na.rm = TRUE), 
-                                                 Highest_Rated_IMDb = max(IMDb_new,na.rm = TRUE),
-                                                 Highest_Rated_RT = max(Rotten_Tomatoes_new,na.rm = TRUE),
-                                                 Lowest_Rated_IMDb = min(IMDb_new,na.rm = TRUE),
-                                                 Highest_Rated_RT = min(Rotten_Tomatoes_new, na.rm = TRUE),
-                                                 Standard_Deviation_IMDb = sd(IMDb_new,na.rm = TRUE))
-
+options(digits = 6)
+summary_table <- tv_data_long %>%
+  group_by(Platform) %>%
+  summarise(Highest_Rated_RT = max(Rotten_Tomatoes_new),
+            AVG_RT = mean(Rotten_Tomatoes_new, na.rm = TRUE),
+            avg_IMDb = mean(IMDb_new, na.rm = TRUE),
+            Highest_Rated_IMDb = max(IMDb_new, na.rm = TRUE),
+            Lowest_IMDb = min(IMDb_new, na.rm = TRUE)
+  )
 View(summary_table)
 <<<<<<< HEAD
 
+max(tv_data_long$Rotten_Tomatoes_new)
 
+test <- tv_data_long %>%
+  group_by(Platform) %>%
+  summarise(Highest_Rated_RT = max(Rotten_Tomatoes_new),
+            AVG_RT = mean(Rotten_Tomatoes_new, na.rm = TRUE),
+            Lowest_Rated_RT = min(Rotten_Tomatoes_new),
+            avg_IMDb = mean(IMDb_new, na.rm = TRUE),
+            Highest_Rated_IMDb = max(IMDb_new, na.rm = TRUE),
+            Lowest_IMDb = min(IMDb_new, na.rm = TRUE)
+            )
 #------------------Netflix tv shows summary--------------------#
 netflix_summary_table <- tv_shows %>% 
   filter(Platform == "Netflix") %>% 
